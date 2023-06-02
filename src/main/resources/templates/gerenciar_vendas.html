@@ -25,7 +25,6 @@
                     <tr>
                         <th>ID</th>
                         <th>Data</th>
-                        <th>Total</th>
                         <th>Alterar</th>
                         <th>Excluir</th>
                     </tr>
@@ -34,7 +33,6 @@
                     <tr th:each="v : ${listaVendas}">
                         <td th:text="${v.id}"></td>
                         <td th:text="${v.getDataVendaFormatada()}"></td>
-                        <td th:text="${v.calcularTotal()}"></td>
                         <td><a th:href="@{/vendas/{id}(id=${v.id})}" class="btn btn-warning"><i class="bi bi-pencil"></i></a></td>
                         <td>
                             <form action="#" th:action="@{/vendas/{id}(id=${v.id})}" th:method="delete">

@@ -25,6 +25,7 @@ public class Produto{
     @Size(min = 1, message = "O nome do produto precisa ser válido.")
     private String nome;
     private float preco;
+    private int quantidade;
 
     @Override
     public String toString() {

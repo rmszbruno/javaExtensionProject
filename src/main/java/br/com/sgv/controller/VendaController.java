@@ -4,6 +4,7 @@ import br.com.sgv.model.Item;
 import br.com.sgv.model.Venda;
 import br.com.sgv.repository.ProdutoRepository;
 import br.com.sgv.repository.VendaRepository;
+import br.com.sgv.repository.ClienteRepository;
 import jakarta.validation.Valid;
 import java.util.Iterator;
 import java.util.Optional;
@@ -29,6 +30,8 @@ public class VendaController {
     private VendaRepository vendaRepository;
     @Autowired
     private ProdutoRepository produtoRepository;
+    @Autowired
+    private ClienteRepository clienteRepository;
     private Venda venda;
 
     @GetMapping("/vendas")
@@ -42,6 +45,7 @@ public class VendaController {
         venda = new Venda();
         vendaRepository.save(venda);
         model.addAttribute("listaProdutos", produtoRepository.findAll());
+        model.addAttribute("listaClientes", clienteRepository.findAll());
         model.addAttribute("venda", venda);
         model.addAttribute("item", new Item());
         return "editar_venda";
@@ -54,6 +58,7 @@ public class VendaController {
         model.addAttribute("venda", venda);
         model.addAttribute("item", new Item());
         model.addAttribute("listaProdutos", produtoRepository.findAll());
+        model.addAttribute("listaClientes", clienteRepository.findAll());
         return "editar_venda";
     }
 

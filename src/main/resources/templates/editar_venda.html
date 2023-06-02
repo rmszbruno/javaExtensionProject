@@ -66,10 +66,6 @@
                                     <option th:each="p : ${listaProdutos}" th:value="${p.id}" th:text="${p.nome}" ></option>
                                 </select>    
                             </div>    
-                            <div class="col">
-                                <label for="quantidade">Quantidade</label>
-                                <input type="number" th:value = "1" min="1" id="quantidade" th:field="*{quantidade}" class="form-control">
-                            </div>  
                         </div>
                         <div class="row">    
                             <div class="col">
@@ -78,6 +74,23 @@
                             </div>   
                         </div>
                         <hr>
+                        <h3> Adicionar cliente</h3>
+                        <hr>
+                        <div class="row" >
+                            <div class="col">
+                                <label for="cliente">Cliente</label>
+                                <select class="form-control" id="comboClientes" th:field="*{produto}">
+                                    <option value="0">Selecione Cliente</option>
+                                    <option th:each="p : ${listaClientes}" th:value="${p.id}" th:text="${p.nome}" ></option>
+                                </select>    
+                            </div>    
+                        </div>
+                        <div class="row">    
+                            <div class="col">
+                                <hr>
+                                <input id="adicionarCliente" type="submit" value="Adicionar" class="btn btn-primary btn-block">    
+                            </div>   
+                        </div>                            
                     </form>
                 </div>
             </div>

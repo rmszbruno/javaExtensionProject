@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -34,6 +35,10 @@ public class Venda implements Serializable{
     @OneToMany (mappedBy = "venda", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Item> listaItens = new ArrayList();
     private Date dataVenda = new Date();
+    @OneToOne
+    private Cliente cliente;
+    @OneToOne
+    private Produto produto;
 
     public String getDataVendaFormatada() {
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
@@ -55,13 +60,16 @@ public class Venda implements Serializable{
         }
         this.dataVenda = data;
     }
-    
+
     public void adicionarItem(Item item){
         listaItens.add(item);
     }
     
     public void removerItem (Item item){
         listaItens.remove(item);
+}
+    public void adicionarCliente (Cliente cliente){
+        this.cliente = cliente;
     }
     
     public float calcularTotal(){

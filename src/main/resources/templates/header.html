@@ -8,7 +8,7 @@
     <!-- Navigation -->
     <div th:fragment="header">
         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">SGV</a>
+            <a class="navbar-brand" href="#"><img src="https://o.remove.bg/downloads/4bdcf0f9-4f52-491d-bea0-ce02d7722b9e/image-removebg-preview.png" height="70px" width="auto" alt="imagem"/></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -19,11 +19,12 @@
                             Gerenciar
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="/cliente">Clientes</a>
-                            <a class="dropdown-item" href="/pessoas-juridicas">Pessoas Juridicas</a>
-                            <a class="dropdown-item" href="/pessoas-fisicas">Pessoas Físicas</a>
+                            <a class="dropdown-item" href="/cliente">Funcionarios</a>
+                            <a class="dropdown-item" href="/pedido">Pedidos</a>
+<!--                             <a class="dropdown-item" href="/pessoas-juridicas">Pessoas Juridicas</a>
+                            <a class="dropdown-item" href="/pessoas-fisicas">Pessoas Físicas</a> -->
                             <a class="dropdown-item" href="/produtos">Produtos</a>
-                            <a class="dropdown-item" href="/vendas">Vendas</a>
+                            <!-- <a class="dropdown-item" href="/vendas">Vendas</a> -->
                          </div>
                     </li>
                     <div sec:authorize="hasRole('ADMIN')">

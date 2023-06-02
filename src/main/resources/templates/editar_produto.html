@@ -31,10 +31,10 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12 mb-3">
-                        <label for="preco">Preço:</label>
-                        <input type="number" min="0" th:field="*{preco}" id="preco" placeholder="Preço" class="form-control">
+                        <label for="quantidade">Quantidade</label>
+                        <input type="number" min="0" th:field="*{quantidade}" id="quantidade" placeholder="Quantidade do Produto" class="form-control">
                     </div>    
-                    <span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}" class="alert alert-warning"></span>
+                    <span th:if="${#fields.hasErrors('quantidade')}" th:errors="*{quantidade}" class="alert alert-warning"></span>
                 </div>
                 <hr class="mb-4">
                 <input type="submit" value="Salvar" class="btn btn-success btn-block">

@@ -2,6 +2,7 @@ package br.com.sgv.controller;
 
 import br.com.sgv.model.Produto;
 import br.com.sgv.repository.ProdutoRepository;
+import br.com.sgv.repository.ClienteRepository;
 import jakarta.validation.Valid;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,8 @@ public class ProdutoController {
 
     @Autowired
     private ProdutoRepository produtoRepository;
+    @Autowired
+    private ClienteRepository clienteRepository;
 
     @GetMapping("/produtos")
     public String listar(Model model) {
