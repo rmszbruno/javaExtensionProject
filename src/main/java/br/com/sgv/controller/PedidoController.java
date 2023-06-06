@@ -63,6 +63,7 @@ public class PedidoController {
         if (result.hasErrors()) {
             return "editar_pedido";
         }
+        pedido.getProduto().setQuantidade(pedido.getProduto().getQuantidade()-1);
         pedidoRepository.save(pedido);
         return "redirect:/pedido";
     }
